@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackTaGram</title>
+    <link href="fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+    <link href="styles.css" rel="stylesheet"> 
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script languaje = "javascript" src = "scripts.js"></script>
+    
+</head>
+<body>
+    <div class = "all">
+        <div class="rightArea">
+            <div class="header">
+                <div class = "menuLeft">
+                    <span class = "titulo">HackTaGram</span>
+                    &nbsp;&nbsp;
+                    <button type="button" class="btn btn-outline-success" style = "display:none;" id = "botonMensajes">Mensajes</button>
+                    &nbsp;&nbsp;
+                    <button type="button" class="btn btn-outline-success" style = "display:none;" id = "botonFotos">Fotos</button>
+                    
+                </div>
+                <div class = "menuRight">
+                    <div class = "container">
+                        <button type="button" class="btn btn-primary" onclick = "presentarIngreso()" id = "botonIngresar">Ingresar</button>
+                        <button type="button" class="btn btn-primary" onclick = "presentarRegistro()" id = "botonRegistrar">Registrar</button>
+                        <button type="button" class="btn btn-primary" style = "display:none;" onclick = "salir()" id = "botonSalir">Salir</button>
+                    </div>
+                </div>
+            </div>
+            <div id = "vistas" class="workArea">
+                <div id = "ingreso" class = "ingreso">
+                    <div class = "container">
+                        <br>
+                        <div class = "row">
+                            <div class = "col col-2"></div>
+                            <div class = "col col-8 bg-transparent text-center">
+                                <h2>
+                                    Ingresar
+                                </h2>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col col-2"></div>
+                            <div class = "col col-8">
+                            
+                                <form>
+                                    <div class="form-group">
+                                        <label for="nombreUsuario">Id usuario</label>
+                                        <input type="text" class="form-control" id="idUsuario" aria-describedby="Id del usuario" placeholder="Ingresar su identificador de usuario">
+                                        <small id="idHelp" class="form-text text-muted">Identificador del usuario.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                    </div>
+                                    <button type="button" class="btn btn-primary"  onclick = "validarIngreso()">Ingresar</button>
+                                    <!--<button type="submit" class="btn btn-primary text-center" onclick = "validarIngreso()">Ingresar</button>-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id = "registro" class = "registro">
+                    <div class = "container">
+                        <br>
+                        <div class = "row">
+                            <div class = "col col-2"></div>
+                            <div class = "col col-8 bg-transparent text-center">
+                                <h2>
+                                    Registrar
+                                </h2>
+                            </div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col col-2"></div>
+                            <div class = "col col-8">
+                            
+                                <form>
+                                    <div class="form-group">
+                                        <label for="Reg_nombreUsuario">Nombre</label>
+                                        <input type="text" class="form-control" id="Reg_nombreUsuario" aria-describedby="Nombre del usuario" placeholder="Ingresar su nombre">
+                                        <small id="nombreHelp" class="form-text text-muted">Nombre del usuario.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Reg_idUsuario">Id usuario</label>
+                                        <input type="text" class="form-control" id="Reg_idUsuario" aria-describedby="Id del usuario" placeholder="Ingresar su identificador de usuario">
+                                        <small id="idHelp" class="form-text text-muted">Identificador del usuario.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Reg_password1">Password</label>
+                                        <input type="password" class="form-control" id="Reg_password1" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Reg_password2">Confirme su password</label>
+                                        <input type="password" class="form-control" id="Reg_password2" placeholder="Confirmación de Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary text-center" onclick = "RegistrarUsuario()">Registrar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id = "mensajes" class = "mensajes">
+                    <div class = "container">
+                        <br>
+                        <div class = "row">
+                            <div class = "col col-2"></div>
+                            <div class = "col col-8 bg-transparent text-center">
+                                <h2>
+                                    Mensajes
+                                </h2>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class = "row">
+                            <div class = "col col-2"></div>
+                            <div class = "col col-8">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"  id="mensaje_nuevo" aria-describedby="Nuevo mensaje" placeholder="Ingresar su mensaje">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class = "col col-2">
+                                <button type="button" class="btn btn-primary text-left" onclick = "agregarMensajeNuevo()" id = "botonAgregarMensaje">+</button>
+
+                            </div>   
+                        </div>
+                        
+                    
+                        <div class = "row">
+                            <div class = "col col-2"></div>
+                            <div class = "col col-8">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class = "ingreso container">
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                </div>
+                <div class = "mensaje container">
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                </div>
+                <div class = "imagenes container">
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                </div>-->
+            </div>
+        </div>
+    </div>
+   
+    
+</body>
+</html>

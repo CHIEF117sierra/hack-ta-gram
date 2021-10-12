@@ -1,0 +1,28 @@
+<div class = "container-fluid m-0 p-0 b-0">
+  <div class="header  m-0 p-0 b-0">
+    <div class = "menuLeft">
+        <span class = "titulo">HackTaGram</span>
+        &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-success" style = "display:none;" id = "botonMensajes">Mensajes</button>
+        &nbsp;&nbsp;
+        <button type="button" class="btn btn-outline-success" style = "display:none;" id = "botonFotos">Fotos</button>
+    </div>
+    <div class = "menuRight">
+        <div class = "container">
+            &nbsp;
+            <button type="button" class="btn btn-primary" (click) = "presentarVistadeIngreso()" id = "botonIngresar">Ingresar</button>
+            &nbsp;
+            <button type="button" class="btn btn-primary" (click) = "presentarVistadeRegistro()" id = "botonRegistrar">Registrar</button>
+            &nbsp;
+            <button type="button" class="btn btn-primary" style = "display:none;" onclick = "salir()" id = "botonSalir">Salir</button>
+        </div>
+    </div>
+  </div>
+  <div id = "vistas">
+    <app-vista-ingreso *ngIf="vActiva == 'vIngreso'"></app-vista-ingreso>
+
+    <app-vista-registro *ngIf="vActiva == 'vRegistro'"></app-vista-registro>
+    <app-vista-mensajes *ngIf="vActiva == 'vMensajes'"></app-vista-mensajes>
+  </div>
+  
+</div>
